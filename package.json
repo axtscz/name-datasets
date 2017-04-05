@@ -4,7 +4,8 @@
   "description": "name generator with cultures",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node random.js"
   },
   "author": "",
   "license": "ISC",
