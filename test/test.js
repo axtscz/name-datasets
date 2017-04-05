@@ -3,7 +3,7 @@
  */
 "use strict"
 var mocha = require("mocha");
-var randomPeople = require("./random.js");
+var randomPeople = require("./../lib/random.js");
 var Promise = require("bluebird");
 var assert = require("assert")
 
