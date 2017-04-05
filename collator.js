@@ -2,6 +2,7 @@
  * Created by Alex Cruz on 4/4/2017.
  */
 var fs = require("fs");
+var jsonMin = require("jsonminify")
 
 //Function to recursively load all files from a directory
 function readFiles(dirname, onFileContent, onError) {
@@ -36,13 +37,14 @@ readFiles('./txt/', function(filename, content) {
         nameObject.gender = filename[7];
         nameObject.culture = filename.substr(0, 2);
         //add name object to array
-        names.push(nameObject)
-        masterList.push(nameObject)
+        names.push(nameObject);
+        masterList.push(nameObject);
     }
 
     //This writes the array to a JSON file
     fs.writeFile("./json/" + filename.replace(".txt", ".json"), JSON.stringify(names), "UTF8");
-    fs.writeFile("./json/master.json", JSON.stringify(masterList), "UTF8");
+    var masterListJSON = JSON.stringify(masterList)
+    fs.writeFile("./json/master.json", masterListJSON, "UTF8");
 
 }, function(err) {
     throw err;

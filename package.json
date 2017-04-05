@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "benchmark": "^2.1.4",
+    "json-minify": "^1.0.0",
+    "jsonminify": "^0.4.1",
     "lodash": "^4.17.4",
     "random-seed": "^0.3.0"
   }
