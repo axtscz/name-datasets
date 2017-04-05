@@ -4,15 +4,17 @@
   "description": "name generator with cultures",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "benchmark": "^2.1.4",
+    "bluebird": "^3.5.0",
     "json-minify": "^1.0.0",
     "jsonminify": "^0.4.1",
     "lodash": "^4.17.4",
+    "mocha": "^3.2.0",
     "random-seed": "^0.3.0"
   }
 }
