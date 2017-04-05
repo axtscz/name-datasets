@@ -22,6 +22,8 @@ function readFiles(dirname, onFileContent, onError) {
     });
 }
 
+var masterList = [];
+
 //Actually load our txt files directory
 readFiles('./txt/', function(filename, content) {
     var nameList = content.split("\n");
@@ -35,10 +37,13 @@ readFiles('./txt/', function(filename, content) {
         nameObject.culture = filename.substr(0, 2);
         //add name object to array
         names.push(nameObject)
+        masterList.push(nameObject)
     }
 
     //This writes the array to a JSON file
-    fs.writeFile("./json/" + filename.replace(".txt", ".json"), JSON.stringify(names), "UTF8")
+    fs.writeFile("./json/" + filename.replace(".txt", ".json"), JSON.stringify(names), "UTF8");
+    fs.writeFile("./json/master.json", JSON.stringify(masterList), "UTF8");
+
 }, function(err) {
     throw err;
 });
